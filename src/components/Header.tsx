@@ -71,7 +71,7 @@ export default () => {
                 <a href="#how-it-works" className="block py-2" onClick={() => setIsMenuOpen(false)}>How it works</a>
               </li>
               <li>
-                <a href="#about" className="block py-2" onClick={() => setIsMenuOpen(false)}>About Us</a>
+                <a href="#about" className="block py-2" onClick={() => setIsMenuOpen(false)}>Impact</a>
               </li>
               <li>
                 <button
