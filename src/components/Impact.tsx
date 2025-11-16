@@ -14,7 +14,7 @@ export default () => {
           </h4>
           <p className="text-white/50">
             Witnessing the transformation: How practical skills unlock
-            Opportunities, strengthen communities, and build brighter futures.
+            opportunities, strengthen communities, and build brighter futures.
           </p>
         </div>
         <img src={ImpactSvg} alt="" className="mb-10 md:mb-0 " />

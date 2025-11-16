@@ -12,7 +12,8 @@ export default ({ isOpen, onClose }: EnrollmentModalProps) => {
     email: "",
     state: "",
     city: "",
-    skills: "",
+    interests: "",
+    domain: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -30,7 +31,8 @@ export default ({ isOpen, onClose }: EnrollmentModalProps) => {
         email: "",
         state: "",
         city: "",
-        skills: "",
+        interests: "",
+        domain: "",
       });
       setIsSubmitted(false);
       onClose();
@@ -52,7 +54,7 @@ export default ({ isOpen, onClose }: EnrollmentModalProps) => {
       onClick={onClose}
     >
       <div 
-        className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto"
+        className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {isSubmitted ? (
@@ -79,113 +81,131 @@ export default ({ isOpen, onClose }: EnrollmentModalProps) => {
             </div>
 
             <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Full Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7BA884]"
-                  placeholder="Enter your full name"
-                />
-              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="mb-4">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7BA884]"
+                    placeholder="Enter your full name"
+                  />
+                </div>
 
-              <div className="mb-4">
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number *
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7BA884]"
-                  placeholder="+91 XXXXX XXXXX"
-                />
-              </div>
+                <div className="mb-4">
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number *
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7BA884]"
+                    placeholder="+91 XXXXX XXXXX"
+                  />
+                </div>
 
-              <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7BA884]"
-                  placeholder="your.email@example.com"
-                />
-              </div>
+                <div className="mb-4">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7BA884]"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
 
-              <div className="mb-4">
-                <label htmlFor="state" className="block text-sm font-medium text-gray-700 mb-2">
-                  State *
-                </label>
-                <select
-                  id="state"
-                  name="state"
-                  required
-                  value={formData.state}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7BA884]"
-                >
-                  <option value="">Select your state</option>
-                  <option value="Bihar">Bihar</option>
-                  <option value="Uttar Pradesh">Uttar Pradesh</option>
-                  <option value="Jharkhand">Jharkhand</option>
-                  <option value="West Bengal">West Bengal</option>
-                  <option value="Madhya Pradesh">Madhya Pradesh</option>
-                  <option value="Rajasthan">Rajasthan</option>
-                  <option value="Maharashtra">Maharashtra</option>
-                  <option value="Delhi">Delhi</option>
-                  <option value="Karnataka">Karnataka</option>
-                  <option value="Tamil Nadu">Tamil Nadu</option>
-                  <option value="Gujarat">Gujarat</option>
-                  <option value="Punjab">Punjab</option>
-                  <option value="Haryana">Haryana</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
+                <div className="mb-4">
+                  <label htmlFor="state" className="block text-sm font-medium text-gray-700 mb-2">
+                    State *
+                  </label>
+                  <select
+                    id="state"
+                    name="state"
+                    required
+                    value={formData.state}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7BA884]"
+                  >
+                    <option value="">Select your state</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
 
-              <div className="mb-4">
-                <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
-                  City *
-                </label>
-                <input
-                  type="text"
-                  id="city"
-                  name="city"
-                  required
-                  value={formData.city}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7BA884]"
-                  placeholder="Enter your city"
-                />
+                <div className="mb-4">
+                  <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
+                    City *
+                  </label>
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    required
+                    value={formData.city}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7BA884]"
+                    placeholder="Enter your city"
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="domain" className="block text-sm font-medium text-gray-700 mb-2">
+                    Domain You Work In *
+                  </label>
+                  <input
+                    type="text"
+                    id="domain"
+                    name="domain"
+                    required
+                    value={formData.domain}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7BA884]"
+                    placeholder="e.g., Education, Healthcare, Technology"
+                  />
+                </div>
               </div>
 
               <div className="mb-6">
-                <label htmlFor="skills" className="block text-sm font-medium text-gray-700 mb-2">
-                  Skills Overview *
+                <label htmlFor="interests" className="block text-sm font-medium text-gray-700 mb-2">
+                  Interests *
                 </label>
                 <textarea
-                  id="skills"
-                  name="skills"
+                  id="interests"
+                  name="interests"
                   required
                   rows={4}
-                  value={formData.skills}
+                  value={formData.interests}
                   onChange={handleChange}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7BA884] resize-none"
-                  placeholder="Briefly describe your skills and experience..."
+                  placeholder="Describe your interests and what you're passionate about..."
                 />
               </div>
 
