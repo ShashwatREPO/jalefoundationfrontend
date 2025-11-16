@@ -24,7 +24,7 @@ export default () => {
                 href="mailto:sales@jaleifoundation"
                 className="text-gray-800 hover:underline"
               >
-                sales@jaleifoundation
+                support@jaleifoundation.com
               </a>
             </p>
           </div>
