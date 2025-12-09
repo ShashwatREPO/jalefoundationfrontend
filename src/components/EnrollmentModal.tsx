@@ -25,7 +25,7 @@ export default ({ isOpen, onClose }: EnrollmentModalProps) => {
     e.preventDefault();
 
     try {
-      const student = await fetch("http://localhost:3000/student", {
+      const student = await fetch("https://api.jaleifoundation.com/landing/student", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export default ({ isOpen, onClose }: EnrollmentModalProps) => {
 
       const studentData = await student.json();
 
-      const order = await fetch("http://localhost:3000/order", {
+      const order = await fetch("https://api.jaleifoundation.com/landing/order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export default ({ isOpen, onClose }: EnrollmentModalProps) => {
           name: studentData.data.fullName,
           order_id: orderData.order_id,
           handler: async (response) => {
-            await fetch("http://localhost:3000/verify", {
+            await fetch("https://api.jaleifoundation.com/landing/verify", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
