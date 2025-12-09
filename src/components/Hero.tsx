@@ -16,7 +16,7 @@ export default () => {
           </h2>
           <p className="text-white/50 mb-[46px] max-w-[580px] leading-[125%]">
             Our innovative internship program builds a powerful ecosystem where
-            educated youth gain essential hands-on experience, and worker
+            educated youth gain essential hands-on experience, and working
             communities develop the skills for a sustainable future.
           </p>
           <div className="flex gap-x-5 flex-row">

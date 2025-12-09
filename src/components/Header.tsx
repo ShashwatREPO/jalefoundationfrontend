@@ -1,10 +1,17 @@
 import logo from "../assets/Jailey-Foundation-Logo.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import EnrollmentModal from "./EnrollmentModal";
 
 export default () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsMenuOpen(true);
+      setIsModalOpen(true);
+    }, 2000);
+  }, []);
 
   return (
     <>
@@ -18,9 +25,9 @@ export default () => {
               </p>
             </a>
           </h1>
-          
+
           {/* Hamburger menu button for mobile */}
-          <button 
+          <button
             className="md:hidden flex flex-col gap-1 p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
@@ -62,16 +69,40 @@ export default () => {
           <nav className="md:hidden mt-4">
             <ul className="flex flex-col space-y-3">
               <li>
-                <a href="#problem" className="block py-2" onClick={() => setIsMenuOpen(false)}>The Problem</a>
+                <a
+                  href="#problem"
+                  className="block py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  The Problem
+                </a>
               </li>
               <li>
-                <a href="#solution" className="block py-2" onClick={() => setIsMenuOpen(false)}>The Solution</a>
+                <a
+                  href="#solution"
+                  className="block py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  The Solution
+                </a>
               </li>
               <li>
-                <a href="#how-it-works" className="block py-2" onClick={() => setIsMenuOpen(false)}>How it works</a>
+                <a
+                  href="#how-it-works"
+                  className="block py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  How it works
+                </a>
               </li>
               <li>
-                <a href="#about" className="block py-2" onClick={() => setIsMenuOpen(false)}>Impact</a>
+                <a
+                  href="#about"
+                  className="block py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About Us
+                </a>
               </li>
               <li>
                 <button
@@ -89,7 +120,10 @@ export default () => {
         )}
       </header>
 
-      <EnrollmentModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <EnrollmentModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </>
   );
 };
